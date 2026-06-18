@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -26,13 +26,13 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
+          ? "bg-black backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6 md:px-0">
         {/* Logo */}
-        <Link href="#" className="font-semibold text-lg tracking-tight">
+        <Link href="/" className="font-semibold text-xl tracking-tight text-white">
           Israel Oyedele
         </Link>
 
@@ -40,23 +40,23 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8 text-sm">
           {navLinks.map((link) => (
             <li key={link.href}>
-                <a
+                <Link
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-gray-300 hover:text-muted-foreground transition-colors"
                 >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <Button asChild className="hidden md:inline-flex">
-          <a href="#contact">Get in touch</a>
+          <Link href="#contact">Get in touch</Link>
         </Button>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden"
+          className="md:hidden text-gray-300"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -66,17 +66,17 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-background border-t border-border px-6 py-4">
+        <div className="md:hidden border-t border-border px-6 py-4">
           <ul className="flex flex-col gap-4 text-sm">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block text-muted-foreground hover:text-foreground transition-colors"
+                  className="block text-gray-300 hover:text-muted-foreground transition-colors"
                   >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
