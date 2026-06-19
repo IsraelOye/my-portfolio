@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
 
 const Hero = () => {
@@ -21,12 +22,22 @@ const Hero = () => {
 
       <div className="relative max-w-5xl mx-auto w-full">
         {/* Eyebrow / status line */}
-        <div className="flex items-center gap-2 mb-6 font-mono text-sm text-emerald-400">
+        <div className="flex items-center gap-2 mb-7 font-mono text-sm text-emerald-400">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
           <p>Available for work</p>
+        </div>
+
+        <div className="bg-gray-300 rounded-full w-fit">
+          <Image 
+          src="/images/portrait.jpeg" 
+          alt="Israel Oyedele" 
+          width={100}
+          height={100}
+          className="rounded-full p-0.5 mb-7"
+        />
         </div>
 
         {/* Name */}
@@ -42,24 +53,24 @@ const Hero = () => {
         {/* Bio / tagline */}
         <p className="mt-6 max-w-xl text-base md:text-lg text-gray-300 leading-relaxed md:leading-7">
           {/* TODO: your 1-2 sentence bio */}
-          I build fast, accessible web interfaces with React and Next.js —
+          I build fast, accessible web interfaces with React and Next.js, 
           turning ideas into clean, functional products.
         </p>
 
         {/* CTA buttons */}
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link
-            href="/projects"
+          <a
+            href="#projects"
             className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black hover:bg-emerald-400 transition-colors"
           >
             View my work
-          </Link>
-          <Link
-            href="/contact"
+          </a>
+          <a
+            href="#contact"
             className="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors"
           >
             Get in touch
-          </Link>
+          </a>
         </div>
 
         {/* Social icons */}
