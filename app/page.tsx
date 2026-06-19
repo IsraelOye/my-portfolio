@@ -1,12 +1,26 @@
 import React from 'react'
-import Navbar from '@/components/navbar'
-
+// import Navbar from '@/components/navbar'
+import Hero from '@/components/hero';
+import AboutTeaser from '@/components/about';
+import SkillSnapshot from '@/components/skill';
+import FeaturedProjects from '@/components/projects';
+import ClosingCta from '@/components/closing-cta';
+import ScrollToTop from '@/components/scroll-to-top';
+import LoadingScreen from '@/components/loading-screen';
 const Home = () => {
   return (
     <>
-      <Navbar />
-     <div>
-       <p className="text-4xl text-center text-blue-700 mt-15">My Portfolio</p>
+     <div className="min-h-screen relative">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-[120px]" />
+      </div>
+      <LoadingScreen />
+       <ScrollToTop />
+        <Hero />
+        <AboutTeaser />
+        <SkillSnapshot />
+        <FeaturedProjects />
+        <ClosingCta />
      </div>
     </>
   )
