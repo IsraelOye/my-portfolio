@@ -6,7 +6,7 @@ import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
 
 const Hero = () => {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center px-6 pt-24 overflow-hidden">
+    <section className="relative flex flex-col min-h-screen justify-center px-6 pt-24 overflow-hidden">
       {/* Background grid + glow */}
       {/* <div className="pointer-events-none absolute inset-0">
         <div

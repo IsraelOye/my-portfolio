@@ -1,6 +1,7 @@
-import React from 'react'
-import Link from "next/link";
-import { FiArrowRight, FiGithub, FiExternalLink } from "react-icons/fi";
+// import React from 'react'
+// import Link from "next/link";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+import Image from "next/image";
 
 
 const projects = [
@@ -10,6 +11,7 @@ const projects = [
       "A shipment tracking platform built with React, Vite, JavaScript, and CSS3. Integrated APIs supporting shipment creation and tracking workflows, with a reusable component architecture and responsive UI.",
     tags: ["React", "Vite", "JavaScript", "CSS3"],
     liveUrl: "https://frontend-project-beta-opal.vercel.app/",
+    image: "/images/tind-logistics.png",
   },
   // {
   //   title: "The Meridiem",
@@ -113,48 +115,64 @@ const FeaturedProjects = () => {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group rounded-lg border border-border bg-white/5 p-5 hover:border-emerald-400/50 transition-colors"
+              className="group rounded-lg border border-border bg-white/5 overflow-hidden transition-colors"
             >
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {project.title}
-              </h3>
-
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs font-mono text-muted-foreground border border-border rounded px-2 py-1"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="w-full aspect-video relative">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    fill
+                    className="object-contain object-top transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-white/5 border border-border flex items-center justify-center">
+                    <span className="text-xs font-mono text-muted-foreground">
+                      preview image
+                    </span>
+                  </div>
+                )}
               </div>
+              <div className="px-5">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {project.title}
+                </h3>
 
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://github.com/IsraelOye"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={`${project.title} GitHub`}
-                >
-                  <FiGithub size={16} /> Code
-                </a>
-                {project.liveUrl && (
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-mono text-muted-foreground border border-border rounded px-2 py-1"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-4 mb-5">
                   <a
-                    href={project.liveUrl}
+                    href="https://github.com/IsraelOye"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label={`${project.title} live demo`}
                   >
-                    <FiExternalLink size={16} /> Live
+                    <FiGithub size={16} /> Code
                   </a>
-                )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <FiExternalLink size={16} /> Live
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

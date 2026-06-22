@@ -4,7 +4,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 const AboutTeaser = () => {
   return (
-    <section id="about" className="px-6 py-24">
+    <section id="about" className="px-6 py-15">
       <div className="max-w-5xl mx-auto">
         <p className="font-mono text-2xl md:text-4xl text-emerald-400 mb-2 md:mb-4">
           About
