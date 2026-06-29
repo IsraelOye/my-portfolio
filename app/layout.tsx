@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Israel Oyedele - Frontend Developer",
   description: "Portfolio of Israel Oyedele, a frontend developer specializing in React and Next.js. Explore my projects, skills, and ways to get in touch.",
+  verification: {
+    google: "hRrKlfIkkvPiaic0SryGHyEuTYVV8HPn6sLbMu5ZNCo",
+  },
 };
 
 export default function RootLayout({
