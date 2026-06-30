@@ -18,8 +18,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  // metadataBase: new URL("https://israeloyedele-portfolio.vercel.app"),
   title: "Israel Oyedele - Frontend Developer",
-  description: "Portfolio of Israel Oyedele, a frontend developer specializing in React and Next.js. Explore my projects, skills, and ways to get in touch.",
+  description:
+    "Portfolio of Israel Oyedele, a frontend developer specializing in React and Next.js. Explore my projects, skills, and ways to get in touch.",
+  applicationName: "Israel Oyedele",
   verification: {
     google: "hRrKlfIkkvPiaic0SryGHyEuTYVV8HPn6sLbMu5ZNCo",
   },
