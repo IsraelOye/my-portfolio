@@ -13,6 +13,20 @@ const projects = [
     liveUrl: "https://frontend-project-beta-opal.vercel.app/",
     image: "/images/tind-logistics.png",
   },
+  {
+    title: "MeriStore",
+    description:
+      "A full e-commerce merch store built with Next.js (App Router) and TypeScript, integrated with the Shopify Storefront API. Features product search, filtering, and sorting; variant selection with live price/stock updates; a persistent cart backed by Shopify's Cart API via Server Actions; and Shopify-hosted checkout.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "shadcn/ui",
+      "Shopify Storefront API",
+    ],
+    liveUrl: "https://meristore.vercel.app/",
+    image: "/images/meristore.png",
+  },
   // {
   //   title: "The Meridiem",
   //   description:
